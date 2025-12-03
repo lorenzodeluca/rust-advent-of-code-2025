@@ -68,7 +68,7 @@ fn get_ranges_from_string(
 
 /// solution for the day 2 advent of code 2025 challenge
 ///
-/// given the ranges, detect the "wrong" ids in which the first part of the number is the same as the second
+/// given the ranges, detect the "wrong" ids that are composed by the repetition of the same sequence
 ///
 /// # Arguments
 ///
