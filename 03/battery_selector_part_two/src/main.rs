@@ -38,8 +38,7 @@ fn read_file_to_list(path: String) -> io::Result<Vec<String>> {
 
 /// find_max_joltage
 ///
-/// finds the max number obtainable selection two digits from each value of the input vector
-/// same logic as the first part but with an array to handle the 12 batteries
+/// finds the max number obtainable concatenating 12 digits for each of the input vector values and sum all the max numbers
 ///
 /// # Arguments
 ///
