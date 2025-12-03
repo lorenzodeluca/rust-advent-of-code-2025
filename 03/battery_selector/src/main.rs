@@ -1,4 +1,4 @@
-//note: i think a linear solution ( O(N) where N is the number of banks) is possible
+//note: i think a linear solution ( O(N)) is possible
 
 use std::fs::File;
 use std::io::{self, BufRead, BufReader};
