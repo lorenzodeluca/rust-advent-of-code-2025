@@ -60,7 +60,8 @@ fn find_max_joltage(banks: Vec<String>) -> u64 {
     for bank in banks {
         let mut bank_choosen_batteries: Vec<usize> = Vec::new(); //array of indexes
         let bank_chars: Vec<char> = bank.chars().collect(); // bank.chars().nth is O(N), so its convenient to just run it once
-        for i in 0..12 { //initialization of bank_choosen_batteries with the first 12 batteries
+        for i in 0..12 {
+            //initialization of bank_choosen_batteries with the first 12 batteries
             bank_choosen_batteries.push(i);
         }
 
@@ -68,10 +69,10 @@ fn find_max_joltage(banks: Vec<String>) -> u64 {
             //shifting the values if within the already selected batteries the next of each one is greater than the next
             //i need to allow the new considered battery in the current bat. selection if either is convient to shift the currently selected batteries because of their current values or either the new battery is greater than the last one
             let mut shift_happened = false;
-            for i in 0..12 {
+            for i in 0..11 {
                 // analysing the bank_choosen_batteries to check if a shift is convenient
-                let current_batt_value = bank_chars[i];
-                let next_batt_value = bank_chars[i + 1];
+                let current_batt_value = bank_chars[bank_choosen_batteries[i]];
+                let next_batt_value = bank_chars[bank_choosen_batteries[i + 1]];
                 if next_batt_value > current_batt_value {
                     // shifting all the values starting from i in bank_choosen_batteries e inserting the new battery (new_considered_bat) in the last slot
                     bank_choosen_batteries.remove(i);
@@ -82,7 +83,7 @@ fn find_max_joltage(banks: Vec<String>) -> u64 {
             }
             if !shift_happened {
                 let new_considered_bat_value = bank_chars[new_considered_bat];
-                let last_bank_choosen_batteries_bat_value = bank_chars[11];
+                let last_bank_choosen_batteries_bat_value = bank_chars[bank_choosen_batteries[11]];
                 if new_considered_bat_value > last_bank_choosen_batteries_bat_value {
                     bank_choosen_batteries[11] = new_considered_bat;
                 }
@@ -95,8 +96,7 @@ fn find_max_joltage(banks: Vec<String>) -> u64 {
         }
 
         //debug
-        print!("bank:{}, selected:{}\n",bank,resulting_joltage.parse::<u64>().unwrap());
-
+        //print!("bank:{}, selected:{}\n",bank, resulting_joltage.parse::<u64>().unwrap());
 
         ris += resulting_joltage.parse::<u64>().unwrap();
     }
