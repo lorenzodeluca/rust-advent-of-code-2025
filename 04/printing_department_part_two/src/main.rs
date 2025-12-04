@@ -36,8 +36,8 @@ fn read_file_to_matrix(path: String) -> io::Result<Vec<Vec<char>>> {
 
 /// find_accessible_rolls part two
 ///
-/// finds how many rolls of paper(@ in the input) in the input are surrounded by less than four other rolls in the adjacent positions
-///
+/// finds how many rolls of paper(@ in the input) in the input are surrounded by less than four other rolls in the adjacent positions.
+/// if a roll is removable after the analysis we will remove it and after we will repeat everything on the new grid
 /// # Arguments
 ///
 /// * `grid` - diagram of the grid where the rolls of paper are located
