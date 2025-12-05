@@ -56,7 +56,7 @@ fn read_file_to_matrix(path: String) -> io::Result<Vec<Vec<char>>> {
 ///          2  @ @ @
 ///
 /// ```
-/// let res = find_max_joltage(read_file_to_list("in.txt"));
+/// let res = find_accessible_rolls(read_file_to_matrix("in.txt"));
 /// ```
 fn find_accessible_rolls(grid: Vec<Vec<char>>) -> u64 {
     let mut ris: u64 = 0;
