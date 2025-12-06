@@ -36,12 +36,13 @@ fn read_file_to_list(path: String) -> io::Result<Vec<String>> {
 
 /// reads vertical number from a matrix. It ignores the last row of the matrix
 ///
-/// this function take a matrix as a parameter and return the number on a column of the matrix
+/// this function take a matrix as a parameter and return the number that can be read vertically on the column_index column of the matrix
 ///
 /// # Arguments
 ///
-/// * `path` - path of the file to read.
-///
+/// * `input` - matrix
+/// * `column_index` - index of the column that should be read
+/// 
 /// # Returns
 ///
 /// A [`io::Result<i64>`] with the number or error if the column doesnt contain a number
