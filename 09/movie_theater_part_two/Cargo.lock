@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "movie_theater"
+name = "movie_theater_part_two"
 version = "0.1.0"
